@@ -77,7 +77,7 @@ resource "aws_launch_template" "eks_node_group_lt" {
   tag_specifications {
     resource_type = "instance"
     tags = merge(local.modified_tags, {
-      Name   = "saas-${var.tags.environment}-${each.value.capacity_type == "SPOT" ? "spot" : "ondemand"}"
+      Name             = "saas-${var.tags.environment}-${each.value.capacity_type == "SPOT" ? "spot" : "ondemand"}"
       environment_name = var.tags.environment
     })
   }
@@ -85,7 +85,7 @@ resource "aws_launch_template" "eks_node_group_lt" {
   tag_specifications {
     resource_type = "volume"
     tags = merge(local.modified_tags, {
-      Name   = "saas-${var.tags.environment}-${each.value.capacity_type == "SPOT" ? "spot" : "ondemand"}"
+      Name             = "saas-${var.tags.environment}-${each.value.capacity_type == "SPOT" ? "spot" : "ondemand"}"
       environment_name = var.tags.environment
     })
   }

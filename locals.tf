@@ -8,7 +8,7 @@ locals {
   cluster_endpoint_private_access       = coalesce(var.cluster_endpoint_private_access, true)
   manage_aws_auth_configmap             = coalesce(var.manage_aws_auth_configmap, false)
 
-#   modified_tags = { for k, v in var.tags : k => v if k != "environment" }
+  #   modified_tags = { for k, v in var.tags : k => v if k != "environment" }
 
   modified_tags = merge(var.tags, { "environment" = null })
 

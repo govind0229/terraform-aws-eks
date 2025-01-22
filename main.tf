@@ -33,7 +33,7 @@ resource "aws_eks_cluster" "this" {
     aws_cloudwatch_log_group.this,
   ]
 
-  tags_all  = local.modified_tags
+  tags_all = local.modified_tags
 }
 
 # Cluster Security Group
@@ -160,7 +160,7 @@ resource "aws_cloudwatch_log_group" "this" {
   tags = var.tags
 
   lifecycle {
-    ignore_changes = [ retention_in_days ]
+    ignore_changes = [retention_in_days]
   }
 }
 
